@@ -14,6 +14,8 @@ namespace WindowsFormsApp7TimerAndMessage
     public partial class Form1 : Form
     {
         int seconds = 0;
+        public static bool stop = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,8 +23,7 @@ namespace WindowsFormsApp7TimerAndMessage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            seconds = 10;
-            countdownTimer.Start();
+            
         }
 
         private void countdownTimer_Tick(object sender, EventArgs e)
@@ -37,20 +38,44 @@ namespace WindowsFormsApp7TimerAndMessage
 
         private void btnAFour_Click(object sender, EventArgs e)
         {
-            seconds = 10;
-            countdownTimer.Start();
+            
         }
 
         private void btnATwo_Click(object sender, EventArgs e)
         {
-            seconds = 10;
-            countdownTimer.Start();
+            
         }
 
         private void btnAThree_Click(object sender, EventArgs e)
         {
-            seconds = 10;
-            countdownTimer.Start();
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            seconds = 3;
+            miniCountdown.Start();
+            if (stop == true)
+            {
+                countdownTimer.Start();
+            }
+        }
+
+        private void miniCountdown_Tick(object sender, EventArgs e)
+        {
+            lblMini.Text = seconds--.ToString();
+            if (seconds < 0)
+            {
+                miniCountdown.Stop();
+                lblMini.Visible = false;
+                countdownTimer.Start();
+                seconds = 60;
+            }
         }
     }
 }

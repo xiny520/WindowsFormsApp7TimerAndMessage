@@ -36,6 +36,10 @@
             this.btnATwo = new System.Windows.Forms.Button();
             this.btnAThree = new System.Windows.Forms.Button();
             this.btnAFour = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.miniCountdown = new System.Windows.Forms.Timer(this.components);
+            this.lblMini = new System.Windows.Forms.Label();
+            this.lblGo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAOne
@@ -109,11 +113,47 @@
             this.btnAFour.UseVisualStyleBackColor = true;
             this.btnAFour.Click += new System.EventHandler(this.btnAFour_Click);
             // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(81, 212);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(362, 185);
+            this.btnStart.TabIndex = 6;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // miniCountdown
+            // 
+            this.miniCountdown.Interval = 1000;
+            this.miniCountdown.Tick += new System.EventHandler(this.miniCountdown_Tick);
+            // 
+            // lblMini
+            // 
+            this.lblMini.AutoSize = true;
+            this.lblMini.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMini.Location = new System.Drawing.Point(1082, 280);
+            this.lblMini.Name = "lblMini";
+            this.lblMini.Size = new System.Drawing.Size(0, 63);
+            this.lblMini.TabIndex = 7;
+            // 
+            // lblGo
+            // 
+            this.lblGo.AutoSize = true;
+            this.lblGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGo.Location = new System.Drawing.Point(1055, 301);
+            this.lblGo.Name = "lblGo";
+            this.lblGo.Size = new System.Drawing.Size(0, 63);
+            this.lblGo.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 594);
+            this.Controls.Add(this.lblGo);
+            this.Controls.Add(this.lblMini);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnAFour);
             this.Controls.Add(this.btnAThree);
@@ -122,6 +162,7 @@
             this.Controls.Add(this.btnAOne);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +177,10 @@
         private System.Windows.Forms.Button btnATwo;
         private System.Windows.Forms.Button btnAThree;
         private System.Windows.Forms.Button btnAFour;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Timer miniCountdown;
+        private System.Windows.Forms.Label lblMini;
+        private System.Windows.Forms.Label lblGo;
     }
 }
 
