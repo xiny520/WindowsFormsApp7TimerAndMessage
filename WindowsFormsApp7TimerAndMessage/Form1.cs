@@ -38,7 +38,7 @@ namespace WindowsFormsApp7TimerAndMessage
 
         private void btnAFour_Click(object sender, EventArgs e)
         {
-            
+            // notes 
         }
 
         private void btnATwo_Click(object sender, EventArgs e)
